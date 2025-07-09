@@ -98,6 +98,21 @@ console.error("Error", err);
  }
 });
 
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Get all users
+ *     responses:
+ *       200:
+ *         description: A list of users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ */
 app.get('/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM users');
