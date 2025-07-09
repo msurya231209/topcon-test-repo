@@ -100,39 +100,18 @@ console.error("Error", err);
 
 /**
  * @swagger
- * /sitedetails:
- *   post:
- *     summary: Create a new site entry
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               site_name:
- *                 type: string
- *               surveying_company:
- *                 type: string
- *               prime_contractor:
- *                 type: string
- *               construction_start:
- *                 type: string
- *                 format: date
- *               construction_end:
- *                 type: string
- *                 format: date
- *               rodman_id:
- *                 type: string
- *               instrument_operator_id:
- *                 type: string
- *               construction_area:
- *                 type: string
+ * /users:
+ *   get:
+ *     summary: Get all users
  *     responses:
- *       201:
- *         description: Site created
- *       500:
- *         description: Server error
+ *       200:
+ *         description: A list of users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
  */
 app.get('/users', async (req, res) => {
   try {
