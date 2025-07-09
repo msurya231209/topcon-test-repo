@@ -98,6 +98,42 @@ console.error("Error", err);
  }
 });
 
+/**
+ * @swagger
+ * /sitedetails:
+ *   post:
+ *     summary: Create a new site entry
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               site_name:
+ *                 type: string
+ *               surveying_company:
+ *                 type: string
+ *               prime_contractor:
+ *                 type: string
+ *               construction_start:
+ *                 type: string
+ *                 format: date
+ *               construction_end:
+ *                 type: string
+ *                 format: date
+ *               rodman_id:
+ *                 type: string
+ *               instrument_operator_id:
+ *                 type: string
+ *               construction_area:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Site created
+ *       500:
+ *         description: Server error
+ */
 app.get('/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM users');
